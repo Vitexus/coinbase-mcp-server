@@ -1,0 +1,5 @@
+dist usr/lib/coinbase-mcp-server
+node_modules usr/lib/coinbase-mcp-server
+package.json usr/lib/coinbase-mcp-server
+debian/coinbase-mcp-server.metainfo.xml usr/share/metainfo
+debian/launcher/coinbase-mcp-server usr/bin

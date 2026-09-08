@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+  <id>io.github.visusnet.coinbase-mcp-server</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>coinbase-mcp-server</name>
+  <summary>MCP server for the Coinbase Advanced Trade API</summary>
+  <description>
+    <p>
+      coinbase-mcp-server is a Model Context Protocol (MCP) server that lets
+      AI assistants interact with the Coinbase Advanced Trade API: account
+      balances, order placement, portfolio and product data, 24 technical
+      indicators, chart-pattern and sentiment analysis, and market-event
+      tools, alongside an included autonomous trading Skill.
+    </p>
+    <p>
+      Warning: when configured with live API keys this software can place
+      real trades and move real funds on your Coinbase account. Use
+      read-only or sandbox keys during evaluation and dry-run mode before
+      trading with real money.
+    </p>
+    <p>
+      The server runs over stdio (--stdio, for desktop MCP hosts such as
+      Claude Code) or HTTP (default, port 3000 unless overridden by PORT).
+    </p>
+  </description>
+  <icon type="stock">network-transmit-receive</icon>
+  <url type="homepage">https://github.com/visusnet/coinbase-mcp-server</url>
+  <url type="bugtracker">https://github.com/visusnet/coinbase-mcp-server/issues</url>
+  <developer id="io.github.visusnet">
+    <name>Alexander Rose</name>
+  </developer>
+  <provides>
+    <binary>coinbase-mcp-server</binary>
+  </provides>
+  <categories>
+    <category>Network</category>
+    <category>Finance</category>
+  </categories>
+  <keywords>
+    <keyword>mcp</keyword>
+    <keyword>coinbase</keyword>
+    <keyword>trading</keyword>
+    <keyword>cryptocurrency</keyword>
+    <keyword>ai-agent</keyword>
+  </keywords>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.0.0" date="2026-09-08"/>
+  </releases>
+</component>

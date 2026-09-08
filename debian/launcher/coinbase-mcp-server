@@ -1,0 +1,2 @@
+#!/bin/sh
+exec nodejs /usr/lib/coinbase-mcp-server/dist/index.js "$@"

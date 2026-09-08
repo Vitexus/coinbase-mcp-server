@@ -1,0 +1,10 @@
+coinbase-mcp-server (1.0.0-1) unstable; urgency=medium
+
+  * Initial release.
+  * Note: Build-Depends/Depends pin nodejs (>= 24) to match upstream's
+    engines.node constraint. This is currently not satisfiable on
+    Debian trixie or Ubuntu resolute, whose nodejs is 20.x; the
+    Jenkinsfile keeps those distributions commented out until a newer
+    nodejs is available there.
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Tue, 08 Sep 2026 12:22:13 +0200

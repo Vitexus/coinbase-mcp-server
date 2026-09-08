@@ -1,0 +1,39 @@
+coinbase-mcp-server for Debian
+===============================
+
+This package vendors its production npm dependency tree under
+/usr/lib/coinbase-mcp-server, since the upstream Node.js dependency
+tree (the MCP SDK, yahoo-finance2, and friends) is not available in
+the Debian archive.
+
+WARNING: when configured with live API keys this software can place
+real trades and move real funds on your Coinbase account. Use
+read-only or sandbox keys while evaluating it, and dry-run mode before
+trading with real money.
+
+Configure credentials via environment variables before running the
+server:
+
+  export COINBASE_API_KEY_NAME='organizations/your-org/apiKeys/your-key'
+  export COINBASE_PRIVATE_KEY='-----BEGIN EC PRIVATE KEY-----...'
+
+Configure your MCP client to run /usr/bin/coinbase-mcp-server in
+stdio mode, e.g. for Claude Code (~/.claude.json):
+
+  {
+    "mcpServers": {
+      "coinbase": {
+        "command": "coinbase-mcp-server",
+        "args": ["--stdio"],
+        "env": {
+          "COINBASE_API_KEY_NAME": "organizations/your-org/apiKeys/your-key",
+          "COINBASE_PRIVATE_KEY": "-----BEGIN EC PRIVATE KEY-----..."
+        }
+      }
+    }
+  }
+
+Without --stdio the server instead listens over HTTP on the port
+given by $PORT (default 3000).
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Tue, 08 Sep 2026 12:22:13 +0200

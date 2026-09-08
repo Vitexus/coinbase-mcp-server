@@ -1,0 +1,47 @@
+Source: coinbase-mcp-server
+Section: net
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends:
+ debhelper-compat (= 13),
+ nodejs (>= 24),
+ npm,
+ appstream,
+Standards-Version: 4.7.0
+Homepage: https://github.com/visusnet/coinbase-mcp-server
+Vcs-Git: https://github.com/Vitexus/coinbase-mcp-server.git
+Vcs-Browser: https://github.com/Vitexus/coinbase-mcp-server
+Rules-Requires-Root: no
+
+Package: coinbase-mcp-server
+Architecture: all
+Depends:
+ ${misc:Depends},
+ nodejs (>= 24),
+Description: MCP server for the Coinbase Advanced Trade API
+ coinbase-mcp-server is a Model Context Protocol (MCP) server that lets
+ AI assistants interact with the Coinbase Advanced Trade API: account
+ balances, order placement, portfolio and product data, 24 technical
+ indicators, chart-pattern and sentiment analysis, and market-event
+ tools, alongside an included autonomous trading Skill.
+ .
+ WARNING: when configured with live API keys this software can place
+ real trades and move real funds on your Coinbase account. Use
+ read-only or sandbox keys during evaluation and dry-run mode before
+ trading with real money.
+ .
+ The server runs over stdio (--stdio, for desktop MCP hosts such as
+ Claude Code) or HTTP (default, port 3000 unless overridden by PORT).
+ Credentials are supplied via the COINBASE_API_KEY_NAME and
+ COINBASE_PRIVATE_KEY environment variables.
+
+Package: mcprack-mcp-server-coinbase
+Architecture: all
+Depends:
+ ${misc:Depends},
+ mcprack (>= 1.5.1),
+ coinbase-mcp-server (= ${binary:Version}),
+Description: Registers Coinbase MCP server into mcprack catalog
+ Companion package for coinbase-mcp-server. Installing it registers the
+ coinbase-mcp-server binary (stdio mode) as an available MCP server in
+ the local mcprack instance; removing it unregisters it again.

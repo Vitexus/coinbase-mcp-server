@@ -1,0 +1,46 @@
+.TH COINBASE\-MCP\-SERVER 1 "2026-09-08" "1.0.0" "User Commands"
+.SH NAME
+coinbase\-mcp\-server \- MCP server for the Coinbase Advanced Trade API
+.SH SYNOPSIS
+.B coinbase-mcp-server
+[\fB\-\-stdio\fR]
+.SH DESCRIPTION
+.B coinbase-mcp-server
+is a Model Context Protocol (MCP) server that lets AI assistants interact
+with the Coinbase Advanced Trade API: account balances, order placement,
+portfolio and product data, technical indicators, chart-pattern and
+sentiment analysis, and market-event tools.
+.PP
+.B WARNING:
+when configured with live API keys this software can place real trades
+and move real funds on your Coinbase account. Use read-only or sandbox
+keys during evaluation, and dry-run mode before trading with real money.
+.PP
+By default the server starts in HTTP mode and listens on the port given
+by \fBPORT\fR (3000 if unset). Pass \fB\-\-stdio\fR to use stdin/stdout
+transport for direct embedding in desktop MCP hosts such as Claude Code.
+.SH OPTIONS
+.TP
+.B \-\-stdio
+Use stdio transport. The MCP host communicates over stdin/stdout.
+.SH ENVIRONMENT
+.TP
+.B COINBASE_API_KEY_NAME
+Coinbase Advanced Trade API key name, e.g.
+\fIorganizations/<org>/apiKeys/<key>\fR. Required.
+.TP
+.B COINBASE_PRIVATE_KEY
+PEM-encoded EC private key matching the API key name. Required.
+.TP
+.B PORT
+TCP port for HTTP mode. Defaults to 3000. Ignored with \fB\-\-stdio\fR.
+.SH FILES
+.B /usr/lib/coinbase-mcp-server
+Installed application code and vendored Node.js dependencies.
+.SH SEE ALSO
+Coinbase Advanced Trade API documentation:
+.UR https://docs.cdp.coinbase.com/advanced-trade/
+.UE
+.SH AUTHOR
+Alexander Rose (upstream); Debian packaging by Vítězslav Dvořák
+<info@vitexsoftware.cz>.

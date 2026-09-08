@@ -4,8 +4,9 @@
 
 String[] distributions = [
 //			'debian:trixie',   // Depends: nodejs (>= 24) but 20.19.2+dfsg-1+deb13u2 is to be installed
+			'debian:forky',    // Debian 14: ships nodejs 24.19.0, satisfies nodejs (>= 24)
 //			'ubuntu:resolute', // Depends: nodejs (>= 24) but an older nodejs is to be installed
-			// Re-enable once a distribution ships nodejs >= 24, or once
+			// Re-enable trixie/resolute once they ship nodejs >= 24, or once
 			// this package is built against a NodeSource/backport nodejs.
 ]
 

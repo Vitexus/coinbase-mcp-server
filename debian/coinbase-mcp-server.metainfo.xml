@@ -27,6 +27,7 @@
   <icon type="stock">network-transmit-receive</icon>
   <url type="homepage">https://github.com/visusnet/coinbase-mcp-server</url>
   <url type="bugtracker">https://github.com/visusnet/coinbase-mcp-server/issues</url>
+  <url type="help">https://github.com/visusnet/coinbase-mcp-server/blob/main/docs/IMPLEMENTED_TOOLS.md</url>
   <developer id="io.github.visusnet">
     <name>Alexander Rose</name>
   </developer>
@@ -39,13 +40,25 @@
   </categories>
   <keywords>
     <keyword>mcp</keyword>
+    <keyword>model-context-protocol</keyword>
     <keyword>coinbase</keyword>
     <keyword>trading</keyword>
     <keyword>cryptocurrency</keyword>
+    <keyword>portfolio</keyword>
+    <keyword>technical-indicators</keyword>
+    <keyword>sentiment-analysis</keyword>
     <keyword>ai-agent</keyword>
   </keywords>
-  <content_rating type="oars-1.1"/>
+  <content_rating type="oars-1.1">
+    <content_attribute id="money-gambling">mild</content_attribute>
+  </content_rating>
   <releases>
-    <release version="1.0.0" date="2026-09-08"/>
+    <release version="1.0.0" date="2026-09-08" type="stable">
+      <description>
+        <p>Initial release: 46 Coinbase Advanced Trade API tools, 24 technical
+        indicators, chart-pattern and sentiment analysis, a market-event
+        tool, and an autonomous trading Skill.</p>
+      </description>
+    </release>
   </releases>
 </component>
